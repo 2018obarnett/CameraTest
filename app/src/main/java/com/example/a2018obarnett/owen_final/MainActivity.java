@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private Button done;
     private Button side;
     private boolean isTop = false;
-    private Boolean isSide = false;
+    private boolean isSide = false;
+    public boolean tester = true;
+
     //Sets up camera
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     //Called once camera takes picture
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         //Checks if right image and get the bitmap
@@ -84,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     //Takes a file name, reads the file and decodes the string into a bitmap, which it passes back
     private Bitmap readImage(String name) {
         try {
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
